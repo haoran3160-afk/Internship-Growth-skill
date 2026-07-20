@@ -1,9 +1,9 @@
 ---
-name: internship-growth
+name: internship-growth-skill
 description: Use whenever a requester identifies as a software intern or junior developer and wants learning or onboarding support for an unfamiliar codebase or business flow, especially company-internal code or uncertain output permission; also use for personal Obsidian design notes, evidence-backed internship worklogs, and truthful resume or interview material. Not for ordinary implementation, debugging, or review without a learning or internship-recording goal.
 ---
 
-# Internship Growth
+# Internship-Growth-skill
 
 ## 核心原则
 

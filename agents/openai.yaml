@@ -1,6 +1,6 @@
 interface:
-  display_name: "程序员实习学习助手"
+  display_name: "Internship-Growth-skill"
   short_description: "理解真实代码链路，沉淀工程模式，记录可验证实习经历"
-  default_prompt: "使用 $internship-growth 选择理解、沉淀或经历模式，只完成我当前需要的输出。"
+  default_prompt: "使用 $internship-growth-skill 选择理解、沉淀或经历模式，只完成我当前需要的输出。"
 policy:
   allow_implicit_invocation: true

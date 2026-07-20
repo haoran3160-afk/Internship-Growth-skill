@@ -1,4 +1,4 @@
-# Internship Growth
+# Internship-Growth-skill
 
 [**简体中文**](./README.md) | [English](./README_EN.md)
 
@@ -10,7 +10,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 [![No Runtime Dependencies](https://img.shields.io/badge/runtime_dependencies-0-success)](./SKILL.md)
 
-`internship-growth` 覆盖程序员实习最关键的三个场景：进入陌生仓库时追踪业务与代码链路，遇到优秀设计时沉淀成可迁移的工程笔记，完成任务后把个人贡献整理成有证据的工作记录和面试素材。
+`internship-growth-skill` 覆盖程序员实习最关键的三个场景：进入陌生仓库时追踪业务与代码链路，遇到优秀设计时沉淀成可迁移的工程笔记，完成任务后把个人贡献整理成有证据的工作记录和面试素材。
 
 每次调用围绕一个明确问题展开，并标注来源、归属和不确定性，方便后续复查、沉淀和面试准备。
 
@@ -29,26 +29,22 @@
 ### Windows PowerShell
 
 ```powershell
-$internshipSkillRoot = if ($env:CODEX_HOME) {
-  Join-Path $env:CODEX_HOME 'skills'
-} else {
-  Join-Path $env:USERPROFILE '.codex\skills'
-}
+$internshipSkillRoot = Join-Path $env:USERPROFILE '.agents\skills'
 
 New-Item -ItemType Directory -Force -Path $internshipSkillRoot | Out-Null
-git clone https://github.com/haoran3160-afk/internship-skill.git `
-  (Join-Path $internshipSkillRoot 'internship-growth')
+git clone https://github.com/haoran3160-afk/Internship-Growth-skill.git `
+  (Join-Path $internshipSkillRoot 'internship-growth-skill')
 ```
 
 ### macOS / Linux
 
 ```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-git clone https://github.com/haoran3160-afk/internship-skill.git \
-  "${CODEX_HOME:-$HOME/.codex}/skills/internship-growth"
+mkdir -p "$HOME/.agents/skills"
+git clone https://github.com/haoran3160-afk/Internship-Growth-skill.git \
+  "$HOME/.agents/skills/internship-growth-skill"
 ```
 
-安装完成后，新建一个 Codex 任务，让 Codex 重新发现 Skill 目录。首次使用建议显式写出 `$internship-growth`，避免与其他代码理解 Skill 发生路由竞争。
+这是 Codex 官方支持的用户级 Skill 目录，可在所有仓库中使用。若只想在单个项目中启用，请改为克隆到该项目的 `.agents/skills/internship-growth-skill`。安装完成后，如果当前任务没有自动发现它，请重启 Codex。首次使用建议显式写出 `$internship-growth-skill`，避免与其他代码理解 Skill 发生路由竞争。目录规则见 [OpenAI 官方文档](https://learn.chatgpt.com/docs/build-skills#where-to-save-skills)。
 
 ## 快速开始
 
@@ -59,7 +55,7 @@ git clone https://github.com/haoran3160-afk/internship-skill.git \
 适合理解新仓库、新功能、Bug、PR 或陌生业务流程。
 
 ```text
-使用 $internship-growth 的理解模式。
+使用 $internship-growth-skill 的理解模式。
 
 请在 <仓库路径> 中，围绕“订单提交后如何完成库存扣减”追踪端到端链路。
 当前对话允许展示内部路径。
@@ -82,7 +78,7 @@ Skill 会围绕这个问题说明：
 适合把已经看懂、且值得跨项目复用的设计整理进 Obsidian。请新建任务，并粘贴脱敏后的设计事实，或提供获准读取的理解结果。
 
 ```text
-使用 $internship-growth 的沉淀模式。
+使用 $internship-growth-skill 的沉淀模式。
 
 以下是已确认的设计事实：<粘贴脱敏事实，或提供获准读取的文件路径>。
 请把“库存扣减的幂等处理”整理成个人 Obsidian 草稿。
@@ -105,7 +101,7 @@ Skill 会围绕这个问题说明：
 适合日常工作留痕、简历准备和面试复盘。
 
 ```text
-使用 $internship-growth 的经历模式。
+使用 $internship-growth-skill 的经历模式。
 
 我确认提交 abc123 和 def456 是我完成的。
 Leader 决定整体方案；我负责接口实现和回归测试。
@@ -172,7 +168,7 @@ Skill 会把每项事实拆成最小可核验陈述，并分别记录：
 ## 项目结构
 
 ```text
-internship-growth/
+internship-growth-skill/
 ├── SKILL.md                    # 触发描述、模式路由和共同约束
 ├── agents/
 │   └── openai.yaml            # Codex 展示与隐式调用元数据

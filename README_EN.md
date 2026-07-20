@@ -1,4 +1,4 @@
-# Internship Growth
+# Internship-Growth-skill
 
 [简体中文](./README.md) | [**English**](./README_EN.md)
 
@@ -10,7 +10,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 [![No Runtime Dependencies](https://img.shields.io/badge/runtime_dependencies-0-success)](./SKILL.md)
 
-`internship-growth` covers three critical situations in a software internship: tracing business and code flows in an unfamiliar repository, turning useful engineering designs into transferable notes, and organizing personal contributions into evidence-backed work records and interview material.
+`internship-growth-skill` covers three critical situations in a software internship: tracing business and code flows in an unfamiliar repository, turning useful engineering designs into transferable notes, and organizing personal contributions into evidence-backed work records and interview material.
 
 Each invocation focuses on one explicit question and marks sources, attribution, and uncertainty so that the result can be reviewed, distilled, or used for interview preparation later.
 
@@ -29,26 +29,22 @@ Each invocation focuses on one explicit question and marks sources, attribution,
 ### Windows PowerShell
 
 ```powershell
-$internshipSkillRoot = if ($env:CODEX_HOME) {
-  Join-Path $env:CODEX_HOME 'skills'
-} else {
-  Join-Path $env:USERPROFILE '.codex\skills'
-}
+$internshipSkillRoot = Join-Path $env:USERPROFILE '.agents\skills'
 
 New-Item -ItemType Directory -Force -Path $internshipSkillRoot | Out-Null
-git clone https://github.com/haoran3160-afk/internship-skill.git `
-  (Join-Path $internshipSkillRoot 'internship-growth')
+git clone https://github.com/haoran3160-afk/Internship-Growth-skill.git `
+  (Join-Path $internshipSkillRoot 'internship-growth-skill')
 ```
 
 ### macOS / Linux
 
 ```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-git clone https://github.com/haoran3160-afk/internship-skill.git \
-  "${CODEX_HOME:-$HOME/.codex}/skills/internship-growth"
+mkdir -p "$HOME/.agents/skills"
+git clone https://github.com/haoran3160-afk/Internship-Growth-skill.git \
+  "$HOME/.agents/skills/internship-growth-skill"
 ```
 
-After installation, start a new Codex task so Codex can discover the Skill directory. For the first invocation, explicitly include `$internship-growth` to avoid routing conflicts with other code-understanding Skills.
+This is Codex's supported user-level Skill directory, so the Skill is available across repositories. To enable it for only one project, clone it to that project's `.agents/skills/internship-growth-skill` directory instead. If Codex does not detect it in the current task, restart Codex. For the first invocation, explicitly include `$internship-growth-skill` to avoid routing conflicts with other code-understanding Skills. See the [official OpenAI documentation](https://learn.chatgpt.com/docs/build-skills#where-to-save-skills) for discovery locations.
 
 ## Quick Start
 
@@ -59,7 +55,7 @@ Choose the single task you need most, then use the corresponding mode.
 Use this mode to understand an unfamiliar repository, feature, bug, PR, or business flow.
 
 ```text
-Use the understanding mode of $internship-growth.
+Use the understanding mode of $internship-growth-skill.
 
 In <repository path>, trace the end-to-end flow for
 “how inventory is deducted after an order is submitted.”
@@ -83,7 +79,7 @@ It does not replace a flow trace with a directory tour, and it does not complete
 Use this mode to move an understood, reusable design into Obsidian. Start a new task and paste sanitized design facts, or provide an approved location containing the understanding result.
 
 ```text
-Use the distillation mode of $internship-growth.
+Use the distillation mode of $internship-growth-skill.
 
 These design facts have been confirmed: <paste sanitized facts,
 or provide an approved file path>.
@@ -108,7 +104,7 @@ The goal is not to collect company code. It is to understand which constraint th
 Use this mode for daily worklogs, résumé preparation, and interview review.
 
 ```text
-Use the experience mode of $internship-growth.
+Use the experience mode of $internship-growth-skill.
 
 I confirm that commits abc123 and def456 are my work.
 The team lead chose the overall design; I implemented the API
@@ -177,7 +173,7 @@ Templates are used only when you explicitly request a saved file. By default, th
 ## Project Structure
 
 ```text
-internship-growth/
+internship-growth-skill/
 ├── SKILL.md                    # Trigger description, mode routing, and shared constraints
 ├── agents/
 │   └── openai.yaml            # Codex display and implicit invocation metadata
