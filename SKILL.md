@@ -1,6 +1,6 @@
 ---
 name: internship-growth-skill
-description: Use whenever a requester identifies as a software intern or junior developer and wants learning or onboarding support for an unfamiliar codebase or business flow, especially company-internal code or uncertain output permission; also use for personal Obsidian design notes, evidence-backed internship worklogs, and truthful resume or interview material. Not for ordinary implementation, debugging, or review without a learning or internship-recording goal.
+description: Use whenever a requester identifies as a software intern or junior developer and wants learning or onboarding support for an unfamiliar codebase, business flow, architecture, runtime path, or specific code, especially company-internal code or uncertain output permission; also use for personal Obsidian design notes, evidence-backed internship worklogs, and truthful resume or interview material. Not for ordinary implementation, debugging, or review without a learning or internship-recording goal.
 ---
 
 # Internship-Growth-skill
@@ -13,7 +13,7 @@ description: Use whenever a requester identifies as a software intern or junior 
 
 | 当前意图 | 必读参考 | 可选模板 | 本次结果 |
 |---|---|---|---|
-| 理解仓库、功能、Bug、PR 或代码链路 | `references/understand.md` | `assets/feature-trace.md` | 有证据的链路解释与 Teach-back |
+| 理解仓库、业务、架构、功能、Bug、PR 或具体代码 | `references/understand.md` | `assets/feature-trace.md` | 符合所需深度且有证据的解释 |
 | 沉淀值得复用的设计 | `references/distill.md` | `assets/engineering-pattern.md` | 脱敏的工程模式笔记 |
 | 记录工作或准备面试 | `references/experience.md` | `assets/worklog.md` 或 `assets/interview-story.md` | 归属和证据清晰的经历材料 |
 
@@ -35,8 +35,8 @@ description: Use whenever a requester identifies as a software intern or junior 
 
 ## 停止条件
 
-- **理解：** 当前链路已解释，关键结论有证据或不确定性标记，并给出一个需要学习者回答的 Teach-back 问题。不要同时给出答案；没有学习者回答时，不声称其已经理解。
-- **沉淀：** 候选确有复用价值，默认结果只有一个模式、一个不变量、一个独立示例、一至三个验证、一个主要取舍和一个迁移题；个人版本不含可识别的内部实现。
+- **理解：** 解释深度符合用户意图，相关的业务、架构、运行机制和代码已建立联系，关键结论有证据或不确定性标记。用户未明确要求学习检验时，不强制 Teach-back；没有学习者回答时，不声称其已经掌握。
+- **沉淀：** 候选确有复用价值，默认结果只有一个模式及其问题、边界、不变量、机制、独立示例、一至三个验证和一个主要取舍；个人版本不含可识别的内部实现。用户未明确要求时不附迁移题。
 - **经历：** 身份未确认时只交付不归属于任何人的待确认事实包；身份确认后，每个重要陈述都有归属和证据状态，无法证明的影响保持未知。
 
 ## 常见错误
@@ -44,8 +44,9 @@ description: Use whenever a requester identifies as a software intern or junior 
 | 错误 | 修正 |
 |---|---|
 | 一次生成所有产物 | 只完成当前模式。 |
-| 用代理总结代替学习验证 | 让学习者复述、预测或定位故障。 |
+| 把有证据的摘要当成易懂解释 | 先建立业务和架构地图，再解释运行链路与关键代码。 |
+| 所有理解请求都使用同一深度 | 快速全貌用概览，默认用详细，明确下钻时聚焦目标代码。 |
 | 把内部源码改名后放进个人库 | 关闭来源，按原理独立重写。 |
 | 根据提交历史写“我负责” | 先确认作者、职责、决策者和验证证据。 |
 | 归属未知时自动降级成 `contributed` | 仍保持未知，只输出待确认事实包。 |
-| 给出 Teach-back 后立即自问自答 | 只提出一个问题并等待学习者作答。 |
+| 默认强制 Teach-back 或迁移题 | 只在用户要求检查理解或主动练习时提供。 |
