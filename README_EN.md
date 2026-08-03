@@ -44,7 +44,7 @@ git clone https://github.com/haoran3160-afk/Internship-Growth-skill.git \
   "$HOME/.agents/skills/internship-growth-skill"
 ```
 
-This is Codex's supported user-level Skill directory, so the Skill is available across repositories. To enable it for only one project, clone it to that project's `.agents/skills/internship-growth-skill` directory instead. If Codex does not detect it in the current task, restart Codex. For the first invocation, explicitly include `$internship-growth-skill` to avoid routing conflicts with other code-understanding Skills. See the [official OpenAI documentation](https://learn.chatgpt.com/docs/build-skills#where-to-save-skills) for discovery locations.
+This is Codex's supported user-level Skill directory, so the Skill is available across repositories. To enable it for only one project, clone it to that project's `.agents/skills/internship-growth-skill` directory instead. If Codex does not detect it in the current task, restart Codex. For the first invocation, explicitly include `$internship-growth-skill` to avoid routing conflicts with other code-understanding Skills. See the [official OpenAI documentation](https://developers.openai.com/codex/skills#where-to-save-skills) for discovery locations.
 
 ## Quick Start
 
@@ -194,6 +194,10 @@ internship-growth-skill/
 ├── evals/
 │   └── understanding-experience.md # Understanding-experience regression cases
 ├── docs/superpowers/             # Approved specification and implementation plan
+├── scripts/
+│   └── validate_skill.py      # CI-only structural validation, not a runtime dependency
+├── .github/workflows/
+│   └── validate.yml           # Automatic validation on PRs and main
 ├── README.md                   # Chinese documentation (default)
 ├── README_EN.md                # English documentation
 └── LICENSE
@@ -210,6 +214,8 @@ Issues and pull requests are welcome. Each change should address one observable 
 3. How the updated trigger, output, or safety boundary was verified
 
 Please avoid adding dashboards, telemetry, long-lived state, or workflows unrelated to the three modes.
+
+After a PR is opened, CI runs `scripts/validate_skill.py` to check the SKILL.md frontmatter, mode routing files, relative links, and template vocabularies. Run `python scripts/validate_skill.py` locally to verify beforehand.
 
 ## License
 

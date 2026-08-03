@@ -44,7 +44,7 @@ git clone https://github.com/haoran3160-afk/Internship-Growth-skill.git \
   "$HOME/.agents/skills/internship-growth-skill"
 ```
 
-这是 Codex 官方支持的用户级 Skill 目录，可在所有仓库中使用。若只想在单个项目中启用，请改为克隆到该项目的 `.agents/skills/internship-growth-skill`。安装完成后，如果当前任务没有自动发现它，请重启 Codex。首次使用建议显式写出 `$internship-growth-skill`，避免与其他代码理解 Skill 发生路由竞争。目录规则见 [OpenAI 官方文档](https://learn.chatgpt.com/docs/build-skills#where-to-save-skills)。
+这是 Codex 官方支持的用户级 Skill 目录，可在所有仓库中使用。若只想在单个项目中启用，请改为克隆到该项目的 `.agents/skills/internship-growth-skill`。安装完成后，如果当前任务没有自动发现它，请重启 Codex。首次使用建议显式写出 `$internship-growth-skill`，避免与其他代码理解 Skill 发生路由竞争。目录规则见 [OpenAI 官方文档](https://developers.openai.com/codex/skills#where-to-save-skills)。
 
 ## 快速开始
 
@@ -188,6 +188,10 @@ internship-growth-skill/
 ├── evals/
 │   └── understanding-experience.md # 理解体验回归场景
 ├── docs/superpowers/             # 已批准规格与实施计划
+├── scripts/
+│   └── validate_skill.py      # 仅供 CI 使用的结构校验，不是运行时依赖
+├── .github/workflows/
+│   └── validate.yml           # PR 与 main 分支自动校验
 ├── README.md                   # 中文主文档
 ├── README_EN.md                # English documentation
 └── LICENSE
@@ -204,6 +208,8 @@ internship-growth-skill/
 3. 修改后如何验证触发、输出或安全边界
 
 请避免加入 Dashboard、遥测、长期状态或与三种模式无关的工作流。
+
+提交 PR 后，CI 会自动运行 `scripts/validate_skill.py`，检查 SKILL.md frontmatter、模式路由文件、相对链接和模板词汇表是否完整。本地可用 `python scripts/validate_skill.py` 提前验证。
 
 ## License
 

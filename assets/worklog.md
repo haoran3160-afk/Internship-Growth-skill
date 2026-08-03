@@ -4,7 +4,7 @@ date: "{{date}}"
 tags:
   - internship/worklog
 confidentiality: review-required
-evidence_status: incomplete
+evidence_review: incomplete
 ---
 
 # {{date}} Worklog

@@ -32,16 +32,16 @@
 
 ## 工具与命令
 
-工作目录：
+工作目录（`<skill-repo-root>` 指本仓库在本机的克隆位置）：
 
 ```powershell
-Set-Location -LiteralPath 'D:\personal\internship-growth'
+Set-Location -LiteralPath '<skill-repo-root>'
 ```
 
-官方 Skill 校验：
+官方 Skill 校验（`<codex-home>` 指本机 Codex 安装目录，通常为 `$env:USERPROFILE\.codex`）：
 
 ```powershell
-python 'C:\Users\lenovo\.codex\skills\.system\skill-creator\scripts\quick_validate.py' 'D:\personal\internship-growth'
+python '<codex-home>\skills\.system\skill-creator\scripts\quick_validate.py' '<skill-repo-root>'
 ```
 
 差异与工作树校验：
@@ -231,7 +231,7 @@ rg -n "三种模式|three modes" 'README.md' 'README_EN.md'
 完整验证：
 
 ```powershell
-python 'C:\Users\lenovo\.codex\skills\.system\skill-creator\scripts\quick_validate.py' 'D:\personal\internship-growth'
+python '<codex-home>\skills\.system\skill-creator\scripts\quick_validate.py' '<skill-repo-root>'
 git diff --check
 git diff --name-only
 git status --short
