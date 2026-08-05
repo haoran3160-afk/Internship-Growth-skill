@@ -189,9 +189,12 @@ internship-growth-skill/
 │   └── understanding-experience.md # 理解体验回归场景
 ├── docs/superpowers/             # 已批准规格与实施计划
 ├── scripts/
-│   └── validate_skill.py      # 仅供 CI 使用的结构校验，不是运行时依赖
+│   └── validate_skill.py      # 开发与 CI 使用的结构校验
+├── tests/
+│   └── test_validate_skill.py # 校验器的正向与负向回归测试
 ├── .github/workflows/
 │   └── validate.yml           # PR 与 main 分支自动校验
+├── requirements-dev.txt       # 固定的开发/CI 依赖，不是 Skill 运行时依赖
 ├── README.md                   # 中文主文档
 ├── README_EN.md                # English documentation
 └── LICENSE
@@ -209,7 +212,15 @@ internship-growth-skill/
 
 请避免加入 Dashboard、遥测、长期状态或与三种模式无关的工作流。
 
-提交 PR 后，CI 会自动运行 `scripts/validate_skill.py`，检查 SKILL.md frontmatter、模式路由文件、相对链接和模板词汇表是否完整。本地可用 `python scripts/validate_skill.py` 提前验证。
+使用本 Skill 不需要安装 Python 包。只有在贡献代码或本地运行仓库校验时，才需要安装固定的开发依赖并执行：
+
+```text
+python -m pip install -r requirements-dev.txt
+python -m unittest discover -s tests -p "test_*.py" -v
+python scripts/validate_skill.py
+```
+
+提交 PR 后，CI 会按相同顺序检查 YAML 结构、模式路由文件、相对链接和模板词汇表。开发依赖不会被 Skill 加载，也不改变零运行时依赖的使用方式。
 
 ## License
 

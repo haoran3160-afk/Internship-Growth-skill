@@ -195,9 +195,12 @@ internship-growth-skill/
 │   └── understanding-experience.md # Understanding-experience regression cases
 ├── docs/superpowers/             # Approved specification and implementation plan
 ├── scripts/
-│   └── validate_skill.py      # CI-only structural validation, not a runtime dependency
+│   └── validate_skill.py      # Structural validation for development and CI
+├── tests/
+│   └── test_validate_skill.py # Positive and negative validator regressions
 ├── .github/workflows/
 │   └── validate.yml           # Automatic validation on PRs and main
+├── requirements-dev.txt       # Pinned development/CI dependency; not used at runtime
 ├── README.md                   # Chinese documentation (default)
 ├── README_EN.md                # English documentation
 └── LICENSE
@@ -215,7 +218,15 @@ Issues and pull requests are welcome. Each change should address one observable 
 
 Please avoid adding dashboards, telemetry, long-lived state, or workflows unrelated to the three modes.
 
-After a PR is opened, CI runs `scripts/validate_skill.py` to check the SKILL.md frontmatter, mode routing files, relative links, and template vocabularies. Run `python scripts/validate_skill.py` locally to verify beforehand.
+Using the Skill requires no Python packages. Install the pinned development dependency only when contributing or running repository checks locally:
+
+```text
+python -m pip install -r requirements-dev.txt
+python -m unittest discover -s tests -p "test_*.py" -v
+python scripts/validate_skill.py
+```
+
+After a PR is opened, CI runs the same sequence to check YAML structure, mode routing files, relative links, and template vocabularies. The development dependency is never loaded by the Skill and does not change its zero-runtime-dependency usage.
 
 ## License
 
