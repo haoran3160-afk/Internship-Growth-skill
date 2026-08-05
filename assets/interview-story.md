@@ -4,7 +4,7 @@ date: "{{date}}"
 tags:
   - internship/interview-story
 confidentiality: review-required
-evidence_status: incomplete
+evidence_review: incomplete
 ---
 
 # {{title}}

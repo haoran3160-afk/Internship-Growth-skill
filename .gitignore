@@ -1,2 +1,5 @@
 .DS_Store
 Thumbs.db
+.skillhub.json
+__pycache__/
+.test-tmp/
